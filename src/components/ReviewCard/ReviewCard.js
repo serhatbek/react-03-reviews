@@ -7,9 +7,21 @@ const ReviewCard = () => {
   const [index, setIndex] = useState(0);
   const { id, image, job, name, text } = people[index];
 
-  const prevPerson = () => {};
-  const nextPerson = () => {};
-  const randomPerson = () => {};
+  const prevPerson = () => {
+    let fullIndex = people.length - 1;
+    setIndex(() => {
+      return index <= 0 ? fullIndex : index - 1;
+    });
+  };
+  const nextPerson = () => {
+    setIndex(() => {
+      return index >= 3 ? 0 : index + 1;
+    });
+  };
+  const randomPerson = () => {
+    const randomNum = Math.floor(Math.random() * people.length);
+    setIndex(randomNum);
+  };
 
   return (
     <div className='review-card' id={id}>
