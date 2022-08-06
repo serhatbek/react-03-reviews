@@ -1,15 +1,15 @@
-import './App.css';
+import './App.scss';
 
-import { useState } from 'react';
-import data from './data';
-import Reviews from './components/Reviews/Reviews';
+import ReviewCard from './components/ReviewCard/ReviewCard';
 
 function App() {
-  const [reviews, setReviews] = useState(data);
   return (
-    <div className='App'>
-      <Reviews reviews={reviews} setReviews={setReviews} />
-    </div>
+    <main className='App'>
+      <section className='container'>
+        <h2>Our Reviews</h2>
+        <ReviewCard />
+      </section>
+    </main>
   );
 }
 
