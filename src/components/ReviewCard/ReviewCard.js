@@ -8,14 +8,13 @@ const ReviewCard = () => {
   const { id, image, job, name, text } = people[index];
 
   const prevPerson = () => {
-    let fullIndex = people.length - 1;
     setIndex(() => {
-      return index <= 0 ? fullIndex : index - 1;
+      return index <= 0 ? people.length - 1 : index - 1;
     });
   };
   const nextPerson = () => {
     setIndex(() => {
-      return index >= 3 ? 0 : index + 1;
+      return index >= people.length - 1 ? 0 : index + 1;
     });
   };
   const randomPerson = () => {
